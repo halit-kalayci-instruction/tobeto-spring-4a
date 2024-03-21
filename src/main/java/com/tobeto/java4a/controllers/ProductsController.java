@@ -1,4 +1,4 @@
-package com.tobeto.java4a;
+package com.tobeto.java4a.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +13,6 @@ public class ProductsController
         // veri ekle. veri sorgula. veri güncelle
         return "Merhaba " + name;
     }
-
-    @PostMapping
-    public Product sayGoodBye(@RequestBody Product product)
-    {
-        return product;
-    }
-    // Web, HTTP, HTTP Anatomy
-    // Medium
-    // 3:20
 
     @PutMapping
     public String saySomething()
