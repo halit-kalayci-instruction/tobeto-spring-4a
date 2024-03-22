@@ -1,5 +1,6 @@
 package com.tobeto.java4a.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,10 +28,8 @@ public class Category
     // mappedBy => Bu ilişki diğer classta
     // hangi değişken ile tanımlı?
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private List<Product> products;
 }
-// OneToOne
-// ManyToMany
-
-// Cumartesi => Tüm tabloların
-// ORM karşılıkları kodlanmalı.
+// Repository => Bir entity'in veritabanı verilerine erişmek için kullanılan class.
+// Dependency Injection
