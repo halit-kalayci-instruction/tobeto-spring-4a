@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/categories")
 public class CategoriesController {
+    // CRUD => Create,Read,Update,Delete
     private CategoryRepository categoryRepository;
     // Ctor Injection
     // Dependency Injection
@@ -27,6 +28,10 @@ public class CategoriesController {
     @PostMapping
     public String add(@RequestBody Category category)
     {
+        // TODO: Doğru noktaya taşı.
+        if(category.getName().length() < 3)
+            throw new RuntimeException("EN az 3 haneli bir isim girin.");
+
         categoryRepository.save(category);
         return "Başarıyla Eklendi.";
     }
@@ -50,3 +55,5 @@ public class CategoriesController {
         return "Başarıyla Silindi";
     }
 }
+// Dün verilen workshop devam
+// Sadece 1 entity için controller ve 4 CRUD operasyonu örneği kodlanacak.
