@@ -28,7 +28,6 @@ public class Category
     // mappedBy => Bu ilişki diğer classta
     // hangi değişken ile tanımlı?
     @OneToMany(mappedBy = "category")
-    @JsonIgnore
     private List<Product> products;
 }
 // Repository => Bir entity'in veritabanı verilerine erişmek için kullanılan class.

@@ -2,6 +2,8 @@ package com.tobeto.java4a.controllers;
 
 import com.tobeto.java4a.entities.Category;
 import com.tobeto.java4a.services.abstracts.CategoryService;
+import com.tobeto.java4a.services.dtos.CategoryForAddDto;
+import com.tobeto.java4a.services.dtos.CategoryForListingDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +19,14 @@ public class CategoriesController {
     }
 
     @GetMapping
-    public List<Category> getAll() {
+    public List<CategoryForListingDto> getAll() {
         return categoryService.getAll();
     }
 
     @PostMapping
-    public void add(@RequestBody Category category)
+    public void add(@RequestBody CategoryForAddDto dto)
     {
-        categoryService.add(category);
+        categoryService.add(dto);
     }
 
     @PutMapping
@@ -39,3 +41,4 @@ public class CategoriesController {
         categoryService.delete(id);
     }
 }
+// DTO => Data Transfer Object
