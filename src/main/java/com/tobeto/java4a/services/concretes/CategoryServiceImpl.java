@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryServiceImpl implements CategoryService
@@ -22,6 +23,7 @@ public class CategoryServiceImpl implements CategoryService
 
     @Override
     public AddCategoryResponse add(AddCategoryRequest request) {
+        categoryWithSameNameShouldNotExist(request.getName());
         Category category = new Category();
         category.setName(request.getName());
         Category savedCategory = categoryRepository.save(category);
@@ -31,7 +33,7 @@ public class CategoryServiceImpl implements CategoryService
 
     @Override
     public void update(Category category) {
-
+        categoryWithSameNameShouldNotExist(category.getName());
     }
     @Override
     public void delete(int id) {
@@ -54,5 +56,16 @@ public class CategoryServiceImpl implements CategoryService
     @Override
     public Category getById(int id) {
         return categoryRepository.findById(id).orElseThrow();
+    }
+
+
+    // 1. => Anlaşılabilirlik
+    // 2. => Uzunluk
+    private void categoryWithSameNameShouldNotExist(String categoryName)
+    {
+        Optional<Category> categoryWithSameName = categoryRepository.findByNameIgnoreCase(categoryName);
+
+        if(categoryWithSameName.isPresent())
+            throw new RuntimeException("Aynı isimde bir kategori zaten var.");
     }
 }

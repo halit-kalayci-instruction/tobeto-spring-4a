@@ -20,3 +20,4 @@ public class AddCategoryRequest
     //@Pattern(regexp = "^(?=.*\\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$", message = "İsim en az 8 karakter, 1 numerik, 1 özel sembol içermelidir.")
     private String name;
 }
+
