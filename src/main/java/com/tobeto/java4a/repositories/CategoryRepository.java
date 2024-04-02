@@ -7,9 +7,13 @@ import java.util.Optional;
 
 public interface CategoryRepository extends JpaRepository<Category, Integer>
 {
-    // Global Exception Handling --
     // Derived Query Methods
     // Custom Queries
+
+    // 10:55
+    // Global Exception Handling --
+
+    // SQL
     Optional<Category> findByNameIgnoreCase(String name);
 }
 // 2:55

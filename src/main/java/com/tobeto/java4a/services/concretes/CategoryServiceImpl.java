@@ -1,5 +1,6 @@
 package com.tobeto.java4a.services.concretes;
 
+import com.tobeto.java4a.core.utils.exceptions.types.BusinessException;
 import com.tobeto.java4a.entities.Category;
 import com.tobeto.java4a.repositories.CategoryRepository;
 import com.tobeto.java4a.services.abstracts.CategoryService;
@@ -23,6 +24,7 @@ public class CategoryServiceImpl implements CategoryService
 
     @Override
     public AddCategoryResponse add(AddCategoryRequest request) {
+        // Algoritma
         categoryWithSameNameShouldNotExist(request.getName());
         Category category = new Category();
         category.setName(request.getName());
@@ -66,6 +68,6 @@ public class CategoryServiceImpl implements CategoryService
         Optional<Category> categoryWithSameName = categoryRepository.findByNameIgnoreCase(categoryName);
 
         if(categoryWithSameName.isPresent())
-            throw new RuntimeException("Aynı isimde bir kategori zaten var.");
+            throw new BusinessException("Aynı isimde bir kategori zaten var.");
     }
 }
