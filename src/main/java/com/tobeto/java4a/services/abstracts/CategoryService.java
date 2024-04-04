@@ -16,3 +16,6 @@ public interface CategoryService
     List<ListCategoryResponse> getAll();
     Category getById(int id);
 }
+// İster
+
+// Sisteme kategori eklenmelidir ama şu kurallar uygulanmalıdır =>

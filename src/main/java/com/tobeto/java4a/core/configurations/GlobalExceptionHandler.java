@@ -37,5 +37,4 @@ public class GlobalExceptionHandler {
         ValidationProblemDetails validationProblemDetails = new ValidationProblemDetails(errorMessages);
         return  validationProblemDetails;
     }
-// 2.15
 }

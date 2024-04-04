@@ -13,7 +13,7 @@ public interface CategoryRepository extends JpaRepository<Category, Integer>
     // 10:55
     // Global Exception Handling --
 
-    // SQL
+    // JPQL - Native SQL
     Optional<Category> findByNameIgnoreCase(String name);
 }
 // 2:55
