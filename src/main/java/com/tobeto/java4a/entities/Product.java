@@ -39,6 +39,10 @@ public class Product
     @Column(name="color")
     private String color;
 
+    public static void hello()
+    {
+
+    }
     // İLİŞKİ
     // FK OLARAK TANIMLANMAZ!
     @ManyToOne

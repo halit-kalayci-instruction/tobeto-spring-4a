@@ -1,22 +1,20 @@
 package com.tobeto.java4a.controllers;
 
+import com.tobeto.java4a.services.abstracts.ProductService;
+import com.tobeto.java4a.services.dtos.requests.AddProductRequest;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/products")
+@AllArgsConstructor
 public class ProductsController
 {
-    @GetMapping
-    public String sayHello(@RequestParam String name)
-    {
-        // DB'e bağlanıp
-        // veri ekle. veri sorgula. veri güncelle
-        return "Merhaba " + name;
-    }
+    private ProductService productService;
 
-    @PutMapping
-    public String saySomething()
+    @PostMapping
+    public void add(@RequestBody AddProductRequest request)
     {
-        return "Bla bla..";
+        productService.add(request);
     }
 }

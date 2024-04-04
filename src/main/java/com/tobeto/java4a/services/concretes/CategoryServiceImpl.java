@@ -28,10 +28,17 @@ public class CategoryServiceImpl implements CategoryService
     public AddCategoryResponse add(AddCategoryRequest request) {
         // Algoritma
         categoryWithSameNameShouldNotExist(request.getName());
+
+        //
         Category category = new Category();
         category.setName(request.getName());
+        //
+
         Category savedCategory = categoryRepository.save(category);
+
+        //
         AddCategoryResponse response = new AddCategoryResponse(savedCategory.getId(), savedCategory.getName());
+        //
         return response;
     }
 
