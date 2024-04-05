@@ -71,6 +71,7 @@
 		</dependency>
 	</dependencies>
 
+	<!-- BOILERPLATE => BASMAKALIP -->
 	<build>
 		<pluginManagement>
 			<plugins>

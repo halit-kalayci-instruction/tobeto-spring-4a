@@ -1,7 +1,8 @@
 package com.tobeto.java4a.services.abstracts;
 
 import com.tobeto.java4a.services.dtos.requests.AddProductRequest;
+import com.tobeto.java4a.services.dtos.responses.AddProductResponse;
 
 public interface ProductService {
-    void add(AddProductRequest request);
+    AddProductResponse add(AddProductRequest request);
 }

@@ -16,4 +16,3 @@ public interface CategoryRepository extends JpaRepository<Category, Integer>
     // JPQL - Native SQL
     Optional<Category> findByNameIgnoreCase(String name);
 }
-// 2:55
