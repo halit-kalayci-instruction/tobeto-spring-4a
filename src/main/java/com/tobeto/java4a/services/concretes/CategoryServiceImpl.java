@@ -62,6 +62,11 @@ public class CategoryServiceImpl implements CategoryService
             ListCategoryResponse dto = new ListCategoryResponse(c.getId(), c.getName());
             result.add(dto);
         }
+
+        //categories.stream()
+          //      .map(c -> new ListCategoryResponse(c.getId(), c.getName()))
+            //    .toList();
+
         return result;
     }
     @Override
